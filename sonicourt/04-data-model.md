@@ -20,9 +20,12 @@ Instruction  (reference links, comparisons, targets)         authored
 
 ## 1. Conventions
 
-- Court frame as defined in `03-test-protocols.md`: x across (0–6.10 m), y
-  along (0–13.41 m), z up, net at y = 6.705 m. Units are metres, seconds,
-  metres per second. Display units (inches, mph) are a presentation concern.
+- Court frame: the prototype's `CourtSiteGeometry` frame. Origin at the net
+  line × centreline; X along the net (positive toward a site-declared post);
+  Y perpendicular to the net, positive into the half being described, with a
+  `half` field naming it; Z up. Inches internally, feet for display, matching
+  the tape-measured constants in the app. The corner-origin metric frame in
+  `03-test-protocols.md` §0 is withdrawn (see document 06 §2.1).
 - Master time is seconds since session start on the audio master timeline.
 - Every derived record has `pipeline_version` and `source_ids`.
 - Identifiers are ULIDs so records sort by creation time.

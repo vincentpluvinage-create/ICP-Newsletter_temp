@@ -13,6 +13,18 @@ test protocols, a data model, and notes separating the invention concepts.
 | `03-test-protocols.md` | Step-by-step test procedures, ground-truth methods, datasets to collect, metrics and pass criteria. |
 | `04-data-model.md` | The unified event → shot → rally → outcome → pattern → instruction structure, JSON schemas, the shot ontology as a spec, versioning rules and example queries. |
 | `05-invention-concepts.md` | The three claim families identified in the write-up plus additional candidates exposed by the engineering plan, prior-art awareness and timing cautions. |
+| `06-reconciliation-with-sonicourt-app.md` | How documents 01–05 change in light of the existing `sonicourt-app` prototype (build 74): what is already built, what the plan gets wrong, revised phase status and the next three builds. Read this first if you know the prototype. |
+
+## Read this first
+
+Documents 01–05 were written from the concept write-up alone. The
+`sonicourt-app` repository already contains a two-phone serve localization
+prototype with chirp synchronization, automatic court calibration, a Watch
+wrist logger and a month of field data. Document 06 reconciles the plan with
+it and supersedes 01–05 wherever they differ. In short: Phases 0–2 are largely
+done for two phones, the net-post camera layout replaces the plan's baseline
+cameras, and the largest new ask of the phone app is continuous 1080p60
+recording.
 
 ## One-paragraph verdict
 
@@ -40,14 +52,15 @@ product. Inside A, the recommended first vertical slice is the dink drill: the
 ball is slow, the pro teaches it constantly, and its measurements (contact
 height, net clearance, bounce depth) are exactly those in the write-up.
 
-## First 30 days (no application code)
+## First 30 days (revised in document 06)
 
-1. Week 1: record one session with four phones using the native camera app, a
-   hand clap for sync and a tape measure for phone positions. Analyze offline in
-   Python. This alone answers whether paddle impacts and bounces are cleanly
-   separable in audio and how large the ball is in pixels from each position.
-2. Weeks 2 and 3: build the minimal capture app (timestamps, chirp sync, Watch
-   companion) and run the synchronization and calibration protocols.
-3. Week 4: acoustic event detector v1 and the first annotated golden set.
+1. Build 75: continuous 1080p60 recording beside the JPEG ring, scheduled-window
+   chirp listening for drift, Watch target re-enabled, post id in session stamps.
+2. Build 76 and one club session: two phones per post, calibration on both
+   kitchen Ts, all four players wearing watches; wrist-to-acoustic matching
+   run offline that evening.
+3. Offline throughout: bounce and net-contact classes trained on the archived
+   `.caf` files; first ball detector on the strike bursts; dink-drill trajectory
+   fit against a string gauge at the net.
 
-See `02-implementation-plan.md` for the full sequence.
+See `06-reconciliation-with-sonicourt-app.md` §3 and `02-implementation-plan.md`.

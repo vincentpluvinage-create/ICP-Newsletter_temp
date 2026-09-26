@@ -105,7 +105,13 @@ The distinguishing thread across F1–F3 is the chain from multimodal evidence t
 a personalized, queryable representation with retrieval of the supporting
 video, not any single sensing step.
 
-## 4. Timing cautions
+## 4. Status against existing filings
+
+A provisional application (v7) and a supplement (3) already exist in the
+`sonicourt-app` project. F4 and F5 are covered there; F1–F3 and F6–F9 are
+not. See document 06 §2.8 for the mapping.
+
+## 5. Timing cautions
 
 - Testing with students at a club, even informally, can constitute public use
   or disclosure. The United States offers a one-year grace period for the

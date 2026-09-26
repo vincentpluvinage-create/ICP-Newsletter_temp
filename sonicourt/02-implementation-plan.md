@@ -1,5 +1,11 @@
 # 02 — Implementation Plan
 
+> Status against the existing `sonicourt-app` prototype is given per phase in
+> `06-reconciliation-with-sonicourt-app.md` §3, which also sets the next three
+> builds. Phases 0–2 are largely done for two phones; Phase 1 gains a
+> continuous 1080p60 recording requirement; Phase 3's detector exists for
+> paddle transients only.
+
 Eleven phases, ordered along the critical path. Each phase names its objective,
 deliverables, the tests that close it, and a go/no-go gate. Effort estimates
 assume one to two experienced engineers plus the user acting as domain expert

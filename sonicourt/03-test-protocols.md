@@ -6,9 +6,13 @@ criterion. Protocols are numbered by phase.
 
 ## 0. Shared conventions
 
-- **Court frame.** Origin at the intersection of baseline A and the left
-  sideline as seen from behind baseline A; x across the court (0–6.10 m), y
-  along the court (0–13.41 m), z up. Net at y = 6.705 m.
+- **Court frame.** Use the prototype's net-centred frame (see document 06
+  §2.1 and `04-data-model.md` §1). Metric values in this document are
+  tolerances, not coordinates.
+- **Existing practice.** The prototype's printed serve cards, blind blocks,
+  photo-verified feet truth, BLOCK markers in the pad log and three-way
+  cross-check (card, referee taps, log) are the established truth method and
+  apply to every protocol below.
 - **Survey.** Phone positions and every marker are measured with a laser
   distance meter or steel tape from two court corners and recorded in the
   session manifest before recording starts.

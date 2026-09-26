@@ -45,6 +45,8 @@ more useful to an instructor.
 ### R1. Cross-device clock synchronization (highest risk, foundational)
 
 Everything downstream assumes the four phones share a timeline. They do not.
+(The prototype has solved this for two phones with iPad-on-T chirp calibration;
+see document 06 §2.2 for what remains.)
 
 | Quantity | Value | Consequence |
 | --- | --- | --- |
@@ -172,6 +174,12 @@ group session. This also matters for patent timing (see `05-invention-concepts.m
 | D10 | Score-call speech recognition as a free ground-truth channel. | Players announce the score before every serve. Recognizing "4-2-1" gives the score, the serving team, and the server number, and lets the system self-check rally outcomes. |
 
 ## 4. Recommended physical layout
+
+> Superseded by `06-reconciliation-with-sonicourt-app.md` §2.1. The existing
+> prototype mounts phones on the net posts in a fixed bracket, which gives a
+> better pixel budget for the ball and an edge-on view of the net tape. The
+> four-phone form is two phones per post, one facing each half. The layout
+> below is retained as the alternative if bounce-depth accuracy fails its gate.
 
 Court: 6.10 m × 13.41 m. Non-volley zone 2.13 m from the net on each side. Net
 0.914 m at the posts and 0.864 m at centre.
