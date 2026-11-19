@@ -21,6 +21,7 @@ test protocols, a data model, and notes separating the invention concepts.
 | `11-60fps-impact.md` | System impact of recording at 60 fps: what it buys for sync and slow motion, why the JPEG ring cannot carry it, the continuous hardware-encoded design that can, and its storage, battery, thermal and collect costs. |
 | `12-rally5-clip-coverage.md` | Measured hit spacing and clip-window coverage from the 11/16 club rally 5 and the full eight-rally run; ratios of clip time to rally, play and run time; two findings on missed soft hits and wrist attribution. |
 | `SONICOURT-BUILD-105-SPEC-2026-11-19.md` | Build 105 specification for the Mac session: rally-gated 1080p60 HEVC recording, master-clock contact anchoring and clip cutting from the recording, synchronized paired review, exclusive watch-to-hit matching, acceptance tests, build and release steps. |
+| `13-build-105-review.md` | Code review of the Mac's build 105 (commits 3d39ab7…f83afb7) against the specification: every section implemented, one justified deviation (watch matching window 0.25/0.40 s on the motion clock instead of 1.5 s), soft hits marked only, risks for the first device run. |
 
 ## Read this first
 
