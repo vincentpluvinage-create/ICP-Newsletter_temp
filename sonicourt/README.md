@@ -19,6 +19,7 @@ test protocols, a data model, and notes separating the invention concepts.
 | `09-pro-session-protocol.md` | Block-by-block protocol for the sessions with professionals on regulation courts, each block tied to the evidence it produces for the filing and the teaching application. |
 | `10-side-by-side-clip-sync-evaluation.md` | Technical evaluation of replaying two clips of one hit side by side, synchronized at contact: what the code does today, the error budget, the fix using each phone's own audio-to-video clock, synchronized playback and export, verification. |
 | `11-60fps-impact.md` | System impact of recording at 60 fps: what it buys for sync and slow motion, why the JPEG ring cannot carry it, the continuous hardware-encoded design that can, and its storage, battery, thermal and collect costs. |
+| `12-rally5-clip-coverage.md` | Measured hit spacing and clip-window coverage from the 11/16 club rally 5 and the full eight-rally run; ratios of clip time to rally, play and run time; two findings on missed soft hits and wrist attribution. |
 
 ## Read this first
 
