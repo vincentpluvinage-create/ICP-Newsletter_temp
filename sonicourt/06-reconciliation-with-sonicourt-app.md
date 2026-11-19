@@ -8,6 +8,10 @@ field data from roughly ten club and driveway sessions between 2026-08-02 and
 2026-08-24. Where this document and documents 01–05 disagree, this document
 wins.
 
+> Status note (2026-11-19): this document describes build 74. The repository
+> is at build 104.10; see `07-paddle-bands-and-build-104-status.md` §2 for the
+> current state and for which recommendations below are superseded.
+
 ## 1. What already exists
 
 | Area | State in `sonicourt-app` | Plan phase it covers |

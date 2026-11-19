@@ -13,7 +13,8 @@ test protocols, a data model, and notes separating the invention concepts.
 | `03-test-protocols.md` | Step-by-step test procedures, ground-truth methods, datasets to collect, metrics and pass criteria. |
 | `04-data-model.md` | The unified event → shot → rally → outcome → pattern → instruction structure, JSON schemas, the shot ontology as a spec, versioning rules and example queries. |
 | `05-invention-concepts.md` | The three claim families identified in the write-up plus additional candidates exposed by the engineering plan, prior-art awareness and timing cautions. |
-| `06-reconciliation-with-sonicourt-app.md` | How documents 01–05 change in light of the existing `sonicourt-app` prototype (build 74): what is already built, what the plan gets wrong, revised phase status and the next three builds. Read this first if you know the prototype. |
+| `06-reconciliation-with-sonicourt-app.md` | How documents 01–05 change in light of the existing `sonicourt-app` prototype (build 74): what is already built, what the plan gets wrong, revised phase status and the next three builds. Read this first if you know the prototype. Written against build 74. |
+| `07-paddle-bands-and-build-104-status.md` | The coloured paddle-band idea folded into the plan, and the prototype's state at build 104.10 (2026-11-18), which replaces the status table in document 06. |
 
 ## Read this first
 
@@ -21,7 +22,8 @@ Documents 01–05 were written from the concept write-up alone. The
 `sonicourt-app` repository already contains a two-phone serve localization
 prototype with chirp synchronization, automatic court calibration, a Watch
 wrist logger and a month of field data. Document 06 reconciles the plan with
-it and supersedes 01–05 wherever they differ. In short: Phases 0–2 are largely
+it and supersedes 01–05 wherever they differ. Document 07 updates the status
+to build 104.10 and adds the paddle-band design. In short: Phases 0–2 are largely
 done for two phones, the net-post camera layout replaces the plan's baseline
 cameras, and the largest new ask of the phone app is continuous 1080p60
 recording.
