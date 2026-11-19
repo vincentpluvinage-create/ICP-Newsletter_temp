@@ -139,12 +139,18 @@ Practical consequences:
 
 | # | Concept | Status | Evidence |
 | --- | --- | --- | --- |
-| M1 | Coloured grip band enrolled per session under the day's light; three-cue server identity (pose, colour, score state) | U | Bands memo 2026-11-18; pixel budget 4 × 2 px |
+| M1 | Coloured grip band enrolled per session under the day's light; three-cue server identity (pose, colour, score state) | U | Bands memo 2026-11-18; pixel budget 4 × 2 px at 1080p. Enrolment superseded by the reference ring of M8; the three-cue identity stands |
 | M2 | Two-tone edge ring sticker: face A and face B colours identify the striking face, hence forehand or backhand with handedness; top mark for orientation | N | Document 07 §1, this document |
 | M3 | Fluorescent pigment for the marker; retroreflective stripe lit by the phone torch during the serve still; alternating torch frames for scene subtraction | N | — |
 | M4 | Paddle face angle from the projected ring outline at contact | N | — |
 | M5 | Impact-triggered optical beacon in the butt cap, confirmed by acoustic coincidence, doubling as a cross-camera sync mark | N | — |
 | M6 | NFC fixture tag read on seating; serial parity declares the post; heading check against the stored net orientation | U | Builds 90.1–91 |
+| M7 | Ring-coded grip collar: slip-on silicone sleeve on the top of the grip whose identity is the axial sequence of full circumferential rings (two or three rings, four matte colours), so the code reads the same from any rotation of the handle; element width sized to the imaging distance (0.5 in or more for 11 px per inch at the baseline) | N | Document 15 §2; pixel budget document 14 §2 |
+| M8 | Integrated colorimetric reference on the sleeve: a white and black ring next to the code rings, used to white-balance and expose-normalise the code in the same image, so the code is read under sun, shade or indoor LED without per-session colour enrolment (replaces the enrolment step of M1) | N | Document 15 §2 item 2 |
+| M9 | Metric marker: the known ring widths and collar diameter recover paddle distance and tilt from one still, and paddle speed from consecutive 60 fps frames | N | Document 15 §2–3; depends on build 105 recording |
+| M10 | Dual-function collar: a raised lip within the 1.0 in allowance above the top of the grip that is a tactile hand-position index for the player and a silhouette feature for the detector when colour fails (edge-on paddle, poor light) | N | Document 15 §2 item 1 |
+| M11 | Rule-shaped placement: the marker as a grip accessory (grip wrap category) with matte finish, no reflective or metallic pigment, colour area limited and placed under or just above the hand; same code printable on an overgrip as the fallback carrier | N | Document 15 §1, §4; USA Pickleball 2.E.5, 2.E.2 |
+| M12 | Code-to-name binding and set design: the app reads the code and the player taps a name once per set; sets of four codes differ in every ring so one mis-read colour never maps to another player of the set; manufacturing by over-moulded or two-shot silicone with debossed branding in the body colour | N | Document 15 §2–3, §6 |
 
 ### 1.8 Networking and operations
 
@@ -185,8 +191,8 @@ Practical consequences:
 3. **Known-geometry camera calibration** (V3–V5, V9–V10, V13–V15): pose-constrained fit with the consistency signal, painted-line and taped-line detectors, four-dot snap, gravity and jolt handling.
 4. **Feet-based rule calls and server identification** (V6–V8, V12, R4): ankle homography, sign tests at anchor lines, across-court fault judge, ball-near-wrist, feet-versus-sound arbitration.
 5. **Wearable attribution and timing** (W1–W6, S16): streaming shock logger, spike-to-hit matching with clock realignment, per-hit motion windows, watch as time-of-arrival source.
-6. **Hands-free serve ritual** (P2–P3, V14, M1): own word detector against enrolled voice takes, feet gate, high-resolution still during video, spoken announcement.
-7. **Paddle markers** (M2–M5): two-tone edge ring reporting the striking face, fluorescent and retroreflective materials with torch capture, face angle from the ring, impact-triggered beacon.
+6. **Hands-free serve ritual** (P2–P3, V14, M1, M7–M8, M12): own word detector against enrolled voice takes, feet gate, high-resolution still during video, the band code read from that still and bound to a name, spoken announcement.
+7. **Paddle markers** (M2–M5, M7–M12): the ring-coded grip collar with its integrated colour reference and tactile collar, read from any azimuth and used as a metric marker (the lead embodiment, with a design patent on its appearance and a class 28 trademark alongside); two-tone edge ring reporting the striking face, fluorescent and retroreflective materials with torch capture (retroreflective only where the rules allow), face angle from the ring, impact-triggered beacon.
 8. **Teaching and strategy layer** (R7–R8, P5): the three families of document 05 plus trajectory fitting and score-call recognition.
 9. **Court-side link and data handling** (N1–N5, X3): rendezvous pairing, Wi-Fi Aware, resumable collect, idempotent upload.
 
@@ -222,7 +228,7 @@ conception only and need the pro sessions for examples.
 | Corner bias and the phone swap | Decides whether the 12 in corner error is a device property; needed to state corner accuracy honestly | B3 |
 | Off-net third microphone or camera fusion at the corners | The reports say corners need geometry, not timing | B3 (optional) |
 | Serve ritual in real play | The word had not been heard before a serve in any rally as of 102.6; the 104.10 flow is untested | B5 |
-| Marker readability | Band pixel size and colour separation unmeasured; new ring and material ideas untested | B4 |
+| Marker readability | Band pixel size and colour separation unmeasured; the ring-coded collar (M7–M12) exists only as a tape mock-up plan (document 14 §3); hand occlusion of the top of the grip and colour separation after correction on the reference ring are the deciding measurements | B4; 105 driveway run per document 14 |
 | Doubles attribution with four watches | Attribution measured with one or two watches, never four | B6 |
 | Forehand/backhand from gravity sign | Mechanism built in 103, no labelled validation | B6, B7 |
 | Clicker contact depth and ball speed | Unvalidated outputs of 104.7 | B1, B7 |
@@ -236,8 +242,13 @@ conception only and need the pro sessions for examples.
   one evidence folder with dates; several are on the Mac only (the 11/07
   iPad folder, all `.caf` files, the club and lattice folders).
 - Keep the invention log current: the marker ideas M2–M5 and the score-call
-  recognition P5 originate on 2026-11-19 in this session; the watch
-  time-of-arrival concept W5 on 2026-10-31; the bands on 2026-11-17/18.
+  recognition P5 originate on 2026-11-19 in this session; the ring-coded grip
+  collar M7–M12 also on 2026-11-19 (document 15); the watch time-of-arrival
+  concept W5 on 2026-10-31; the bands on 2026-11-17/18.
+- Before filing family 7, run a prior-art search on CPC A63B 59/42, A63B 60/08
+  to 60/14 (grips) and G06V 20/40 for colour-coded handle markers read by
+  cameras; the search of 2026-11-19 found only string-tension and
+  grip-position bands (US 7,335,120; US 2018/0065010).
 - The July application's statement that near-ultrasonic tones failed
   outdoors is useful background for family 1: the audible chirp, two-way
   exchange and ping loop are the solution to a documented failure.
