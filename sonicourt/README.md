@@ -22,6 +22,7 @@ test protocols, a data model, and notes separating the invention concepts.
 | `12-rally5-clip-coverage.md` | Measured hit spacing and clip-window coverage from the 11/16 club rally 5 and the full eight-rally run; ratios of clip time to rally, play and run time; two findings on missed soft hits and wrist attribution. |
 | `SONICOURT-BUILD-105-SPEC-2026-11-19.md` | Build 105 specification for the Mac session: rally-gated 1080p60 HEVC recording, master-clock contact anchoring and clip cutting from the recording, synchronized paired review, exclusive watch-to-hit matching, acceptance tests, build and release steps. |
 | `13-build-105-review.md` | Code review of the Mac's build 105 (commits 3d39ab7…f83afb7) against the specification: every section implemented, one justified deviation (watch matching window 0.25/0.40 s on the motion clock instead of 1.5 s), soft hits marked only, risks for the first device run. |
+| `14-serve-photo-acquisition.md` | Serve photos first: what 104.9/105 already capture, pixel budget for a handle band at the baseline (about 11 px per inch in the 12 MP still, 5 px in the video frame), the acquisition protocol with tape variants for the 105 driveway run, the analysis to run on the pushed JPEGs, and the Mac command to push the existing 11/17 photos. |
 
 ## Read this first
 
