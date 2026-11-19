@@ -39,7 +39,7 @@ average half as far from contact.
 | Ring memory for 4.5 s | 135 frames, 30 to 45 MB | 270 frames, 60 to 90 MB, or halve the history to 2.25 s |
 | Clip encoding from JPEGs | decode 90 frames, encode H.264 | decode 180 frames; roughly double the time per clip, on the utility queue |
 | Thermal | already the early-warning item; CAPLAG stalls in August were traced to CPU starvation | likely to reproduce them |
-| Court fit, ball detector, serve photo | unaffected, they read single frames | unaffected |
+| Court fit, serve gate, ball detector | unaffected, they read single full-resolution frames | unaffected |
 
 So the ring design should stay at 30 fps for its own purposes, or shrink.
 
@@ -52,11 +52,33 @@ So the ring design should stay at 30 fps for its own purposes, or shrink.
    minute so a crash loses a minute, not a session. On iOS a session cannot
    carry both a movie-file output and a video-data output, so the writer is
    fed from the existing data output, which keeps every current consumer.
-2. **A small live stream for vision.** From the same buffers, take every
-   second or fourth frame, downscale to about 640 × 360, and keep that as
-   the ring for framing, the court fit, the feet vote and the serve-photo
-   gate. The full-resolution JPEG burst around a hit can stay, since it is
-   eight frames per hit, not every frame.
+2. **Full-resolution frames on demand, no ring.** The live jobs do not
+   need every frame, but the ones they need must be full resolution. The
+   camera delivers a full-size pixel buffer sixty times a second whether or
+   not anything looks at it, and Vision and the line detector read a pixel
+   buffer directly, so a job simply takes the current buffer when it needs
+   one, with no JPEG step. There are three such moments:
+   - **Framing**, before play only, while the phones are being seated: a
+     frame every half second goes to the iPad, downscaled for the picture
+     as today.
+   - **Court-line fit**, at full resolution because a painted line is only a
+     few pixels wide: on a frame every few seconds at the start, between
+     rallies and at each serve, when the court is empty or still. During a
+     rally the homography is frozen, as build 84 already does, and the
+     court's line positions are fixed pixel coordinates for every consumer.
+     An occasional frame during play can still feed the consistency check,
+     since that costs one frame, not a stream.
+   - **The serve gate**, at full resolution because it reads the band on the
+     handle and the ball: when the word "serving" is heard, run the pose,
+     the band colour and the ball detector on live frames a few times a
+     second until both feet are behind the line, then take the 12 MP still.
+   The JPEG ring is then not needed at all. Its one remaining role, reaching
+   back in time for the burst around a hit, is served by the recording:
+   the frames around any contact are decoded from the file after the rally,
+   when the hit is reviewed, exactly as the clips are. If a live feet vote
+   per hit is still wanted for the side fusion, it can run on the current
+   full-resolution frame at the moment the hit is detected, which is within
+   a tenth of a second of contact.
 3. **Clips cut from the recording by timestamp.** The recording carries
    presentation timestamps on the same host clock as today's ring, so the
    contact instant from document 10 maps straight into it. Cutting is a
@@ -97,11 +119,11 @@ So the ring design should stay at 30 fps for its own purposes, or shrink.
 ## 6a. Review-time use changes the live cost
 
 The paired replay and slow motion are used after a rally, in review. During
-play the phone therefore does only three things with video: run the
-encoder into the continuous recording, keep the small decimated stream for
-the court fit and the serve-photo gate, and save the eight-frame burst per
-hit. No clip is cut, no clip crosses the mesh, and the camera queue never
-waits on an encode of 180 JPEGs. The heavier steps, re-muxing three seconds
+play the phone therefore does only two things with video: run the encoder
+into the continuous recording, and hand a full-resolution frame to the
+court fit or the serve gate at the moments §4 names. No ring, no JPEG per
+frame, no clip cut, no clip across the mesh; the burst around a hit is
+decoded from the recording when the hit is reviewed. The heavier steps, re-muxing three seconds
 from the recording and sending it, happen only for the hits the operator
 reviews, in the gaps between rallies, when the radio and the CPU are idle.
 Storage per phone and the USB pull are the only costs that remain
@@ -109,8 +131,9 @@ proportional to session length.
 
 ## 7. Recommendation
 
-Build the continuous recording at 1080p60 with the decimated live stream,
-keep the JPEG burst per hit, cut clips by timestamp, and pull full
-recordings by USB. Measure thermal state, dropped-frame count and battery
+Build the continuous recording at 1080p60, retire the JPEG ring, take
+full-resolution frames on demand for the court fit and the serve gate, cut
+clips and bursts from the recording by timestamp, and pull full recordings
+by USB. Measure thermal state, dropped-frame count and battery
 over a 90-minute driveway session before the pro sessions. Offer 120 fps as
 a per-block option once 60 is stable.
