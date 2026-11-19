@@ -94,6 +94,19 @@ So the ring design should stay at 30 fps for its own purposes, or shrink.
   audio writes off the tap thread for exactly this reason. Keep the writer
   off that thread.
 
+## 6a. Review-time use changes the live cost
+
+The paired replay and slow motion are used after a rally, in review. During
+play the phone therefore does only three things with video: run the
+encoder into the continuous recording, keep the small decimated stream for
+the court fit and the serve-photo gate, and save the eight-frame burst per
+hit. No clip is cut, no clip crosses the mesh, and the camera queue never
+waits on an encode of 180 JPEGs. The heavier steps, re-muxing three seconds
+from the recording and sending it, happen only for the hits the operator
+reviews, in the gaps between rallies, when the radio and the CPU are idle.
+Storage per phone and the USB pull are the only costs that remain
+proportional to session length.
+
 ## 7. Recommendation
 
 Build the continuous recording at 1080p60 with the decimated live stream,

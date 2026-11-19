@@ -129,6 +129,23 @@ that places them left and right (or stacked for a vertical social-media
 crop) with the court diagram and label overlaid. This is the renderer the
 rally compilation already needs, so the two features share one path.
 
+## 5a. When the work happens: after the rally, in review
+
+The paired, synchronized replay is a review feature, not a live one. That
+sets the division of work:
+
+| During play | After the rally, in review |
+| --- | --- |
+| Phones record continuously; the audio pipeline detects hits; the iPad clusters them and solves the contact point and time on the master clock | The operator opens the rally; the iPad shows its hits on the court |
+| Nothing is cut, encoded or transferred for the paired view | For the selected hit the iPad converts the contact time to each facing phone's sample index and asks those two phones for a clip |
+| The existing live auto-clip stays optional | Each phone cuts three seconds around the contact and sends it; two clips of 4 to 5 MB arrive in a few seconds over Wi-Fi Aware |
+| | The iPad starts both players on one host clock; whole-rally mode does this hit by hit; half speed and frame stepping apply to both |
+
+Because the master clock already holds the contact time of every hit when
+the rally ends, the review can begin at once; only the clips are fetched
+lazily. This also means the per-phone onset fallback in §4 is needed only
+for live auto-clips, never for the review.
+
 ## 6. What limits the visible result
 
 - **Frame rate.** At 30 fps a 50 mph drive moves the ball 37 cm between
