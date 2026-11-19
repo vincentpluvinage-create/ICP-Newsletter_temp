@@ -15,6 +15,8 @@ test protocols, a data model, and notes separating the invention concepts.
 | `05-invention-concepts.md` | The three claim families identified in the write-up plus additional candidates exposed by the engineering plan, prior-art awareness and timing cautions. |
 | `06-reconciliation-with-sonicourt-app.md` | How documents 01–05 change in light of the existing `sonicourt-app` prototype (build 74): what is already built, what the plan gets wrong, revised phase status and the next three builds. Read this first if you know the prototype. Written against build 74. |
 | `07-paddle-bands-and-build-104-status.md` | The coloured paddle-band idea folded into the plan, and the prototype's state at build 104.10 (2026-11-18), which replaces the status table in document 06. |
+| `08-invention-inventory-for-provisional.md` | Every concept in the repository and the two filed provisionals, marked filed, unfiled or new, with build, date and measured evidence; suggested claim families; reduction-to-practice record; evidence gaps. |
+| `09-pro-session-protocol.md` | Block-by-block protocol for the sessions with professionals on regulation courts, each block tied to the evidence it produces for the filing and the teaching application. |
 
 ## Read this first
 
