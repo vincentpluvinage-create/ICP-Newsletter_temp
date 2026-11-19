@@ -18,6 +18,7 @@ test protocols, a data model, and notes separating the invention concepts.
 | `08-invention-inventory-for-provisional.md` | Every concept in the repository and the two filed provisionals, marked filed, unfiled or new, with build, date and measured evidence; suggested claim families; reduction-to-practice record; evidence gaps. |
 | `09-pro-session-protocol.md` | Block-by-block protocol for the sessions with professionals on regulation courts, each block tied to the evidence it produces for the filing and the teaching application. |
 | `10-side-by-side-clip-sync-evaluation.md` | Technical evaluation of replaying two clips of one hit side by side, synchronized at contact: what the code does today, the error budget, the fix using each phone's own audio-to-video clock, synchronized playback and export, verification. |
+| `11-60fps-impact.md` | System impact of recording at 60 fps: what it buys for sync and slow motion, why the JPEG ring cannot carry it, the continuous hardware-encoded design that can, and its storage, battery, thermal and collect costs. |
 
 ## Read this first
 
