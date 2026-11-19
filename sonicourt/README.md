@@ -17,6 +17,7 @@ test protocols, a data model, and notes separating the invention concepts.
 | `07-paddle-bands-and-build-104-status.md` | The coloured paddle-band idea folded into the plan, and the prototype's state at build 104.10 (2026-11-18), which replaces the status table in document 06. |
 | `08-invention-inventory-for-provisional.md` | Every concept in the repository and the two filed provisionals, marked filed, unfiled or new, with build, date and measured evidence; suggested claim families; reduction-to-practice record; evidence gaps. |
 | `09-pro-session-protocol.md` | Block-by-block protocol for the sessions with professionals on regulation courts, each block tied to the evidence it produces for the filing and the teaching application. |
+| `10-side-by-side-clip-sync-evaluation.md` | Technical evaluation of replaying two clips of one hit side by side, synchronized at contact: what the code does today, the error budget, the fix using each phone's own audio-to-video clock, synchronized playback and export, verification. |
 
 ## Read this first
 
